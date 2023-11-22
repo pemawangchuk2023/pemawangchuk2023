@@ -1,5 +1,8 @@
 🤠 Who Am I?
 
+![Uploading 0.jpeg…]()
+
+
 🤓 Hey there! I'm on a journey to evolve into a self-taught full-stack web3 Developer and a meticulous smart contract auditor.
 
 📝 My days are filled with the satisfying rhythm of writing code and the thrill of compiling it into functional and efficient programs.
