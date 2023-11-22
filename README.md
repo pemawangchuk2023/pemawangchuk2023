@@ -1,6 +1,5 @@
 🤠 Who Am I?
 
-![0](https://github.com/pemawangchuk2023/pemawangchuk2023/assets/140195033/49c1a010-4ab8-4d53-94c8-0a5084150183)
 
 🤓 Hey there! I'm on a journey to evolve into a self-taught full-stack web3 Developer and a meticulous smart contract auditor.
 
