@@ -1,4 +1,6 @@
 🤠 Who Am I?
+<img width="158" alt="8" src="https://github.com/user-attachments/assets/96f21b6d-4214-4909-87b4-6a6174f2ae43" />
+
 
 🔗 Check out my work: www.pemawangchuk.pro
 
