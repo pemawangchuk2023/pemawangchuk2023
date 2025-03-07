@@ -15,10 +15,11 @@
 📜 Bitcoin Historian
 
 🌍 Deeply intrigued by Bitcoin's revolutionary journey, I dive into its history, evolution, and transformative impact. Uncovering the mysteries surrounding Satoshi Nakamoto and the innovations by pioneers like Nick Szabo fuels my curiosity.
+The history of Bitcoin which I have divided into Part I & Part II can be founded at: https://tiktok.com/@finance2it
 
 🎯 My Mission
 
-🎓 My goal is clear and ambitious: to master Web3 as a versatile full-stack developer and become a reliable, respected auditor of smart contracts, safeguarding the future of decentralized applications.
+🎓 My goal is clear and ambitious: to master Web3 as a versatile full-stack developer and become a reliable, respected auditor of smart contracts, safeguarding the future of decentralized applications, and finance professional well-equipped with the programming skills. 
 
 🌱 Currently Learning
 
