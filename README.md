@@ -1,5 +1,6 @@
 
-<img width="158" alt="8" src="https://github.com/user-attachments/assets/96f21b6d-4214-4909-87b4-6a6174f2ae43" />
+<img width="546" height="749" alt="4" src="https://github.com/user-attachments/assets/3e314e7c-8b22-4f18-badb-2ba87b60ac38" />
+
 
 🤠 Who Am I?
 
