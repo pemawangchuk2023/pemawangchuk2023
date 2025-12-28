@@ -5,10 +5,10 @@
 </p>
 
 ### 🤠 Who Am I?
-👋 Hello! I'm a passionate, and strong believer of self-learning. I am finance by professional and programming by interest, and I am aiming to combine both the skills. 
+👋 Hello! I'm a passionate believer in self-learning. I am a finance professional by trade and a programmer by interest, aiming to combine both skills to build innovative solutions. 
 
 ### 📜 Bitcoin Historian
-🌍 Deeply intrigued by Bitcoin's revolutionary journey, I dive into its history, evolution, and transformative impact. Uncovering the mysteries surrounding Satoshi Nakamoto and the innovations by pioneers like Nick Szabo fuels my curiosity.
+🌍 I am deeply intrigued by Bitcoin's revolutionary journey. I enjoy exploring its history, evolution, and transformative impact—from the mysteries of **Satoshi Nakamoto** to the groundbreaking work of pioneers like **Nick Szabo**.
 
 ---
 
@@ -26,15 +26,15 @@
 
 ### 🌱 Currently Immersed In:
 - 🌐 **Next.js** – Crafting dynamic and efficient web experiences.
-- 📜 **Solidity** – Bringing smart contracts to life with creativity and precision.
-- ⚙️ **TypeScript & JavaScript** – Building robust, scalable solutions for complex challenges.
+- 📜 **Solidity** – Bringing smart contracts to life with precision.
+- ⚙️ **TypeScript & JavaScript** – Building robust and scalable solutions.
 
 ---
 
-### 📊 GitHub Activity
+### 💹 GitHub Metrics
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pemawangchuk2023&show_icons=true&theme=tokyonight" alt="GitHub Stats" height="150" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pemawangchuk2023&layout=compact&theme=tokyonight" alt="Top Languages" height="150" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pemawangchuk2023&show_icons=true&theme=tokyonight" alt="GitHub Stats" height="150" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pemawangchuk2023&layout=compact&theme=tokyonight" alt="Top Languages" height="100" />
 </p>
 
 ---
@@ -47,4 +47,4 @@
   <i>"Let’s code, innovate, and shape the decentralized future together! 🚀✨"</i>
 </p>
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=100&section=footer)
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=3399ff&height=100&section=footer)
