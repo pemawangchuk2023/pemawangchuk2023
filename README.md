@@ -1,26 +1,50 @@
+# 👋 Hello, I'm Pema Wangchuk
 
-<img width="200" height="250" alt="4" src="https://github.com/user-attachments/assets/3e314e7c-8b22-4f18-badb-2ba87b60ac38" />
+<p align="center">
+  <img width="250" alt="Pema Wangchuk" src="https://github.com/user-attachments/assets/3e314e7c-8b22-4f18-badb-2ba87b60ac38" style="border-radius: 50%;" />
+</p>
 
-🤠 Who Am I?
-
+### 🤠 Who Am I?
 👋 Hello! I'm a passionate, and strong believer of self-learning. I am finance by professional and programming by interest, and I am aiming to combine both the skills. 
 
-📜 Bitcoin Historian
-
+### 📜 Bitcoin Historian
 🌍 Deeply intrigued by Bitcoin's revolutionary journey, I dive into its history, evolution, and transformative impact. Uncovering the mysteries surrounding Satoshi Nakamoto and the innovations by pioneers like Nick Szabo fuels my curiosity.
 
-🎯 My Mission
+---
 
-🎓 My goal is clear, to keep learning accounting, smart contract, and web development with specific focus on TypeScript, JavaScript, Python, and Solidity and framework like NextJS and Tanstack Start. 
+### 🚀 Technical Arsenal
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=ts,js,nextjs,react,tailwind,nodejs,supabase,mongodb,py,solidity,git,github,vscode" />
+  </a>
+</p>
 
-🌱 Currently Learning
+**My Mission:** 🎯
+🎓 My goal is clear: to keep learning accounting, smart contracts, and web development with a specific focus on **TypeScript, JavaScript, Python, and Solidity**, and frameworks like **Next.js** and **TanStack**. 
 
-📚 The journey never ends! I'm deeply immersed in:
+---
 
-🌐 Next.js – Crafting dynamic and efficient web experiences
+### 🌱 Currently Immersed In:
+- 🌐 **Next.js** – Crafting dynamic and efficient web experiences.
+- 📜 **Solidity** – Bringing smart contracts to life with creativity and precision.
+- ⚙️ **TypeScript & JavaScript** – Building robust, scalable solutions for complex challenges.
 
-📜 Solidity – Bringing smart contracts to life with creativity and precision
+---
 
-⚙️ TypeScript & JavaScript – Building robust, scalable solutions for complex challenges
+### 📊 GitHub Activity
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=pemawangchuk2023&show_icons=true&theme=tokyonight" alt="GitHub Stats" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pemawangchuk2023&layout=compact&theme=tokyonight" alt="Top Languages" height="150" />
+</p>
 
-Let's code, innovate, and shape the decentralized future together! 🚀✨
+---
+
+### 📫 Connect with Me
+- 💼 **LinkedIn:** [Pema Wangchuk](https://linkedin.com/in/pema-wangchuk-5561aa224)
+
+<p align="center">
+  <br />
+  <i>"Let’s code, innovate, and shape the decentralized future together! 🚀✨"</i>
+</p>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=100&section=footer)
