@@ -4,8 +4,6 @@
 
 🤠 Who Am I?
 
-🔗 Check out my work: www.pemawangchuk.pro
-
 👋 Hello! I'm a passionate, self-driven developer evolving into a full-stack Web3 Engineer and a meticulous Smart Contract Auditor.
 
 🚀 Crafting Code & Auditing Contracts
