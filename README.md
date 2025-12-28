@@ -1,27 +1,17 @@
 
 <img width="200" height="250" alt="4" src="https://github.com/user-attachments/assets/3e314e7c-8b22-4f18-badb-2ba87b60ac38" />
 
-
 🤠 Who Am I?
 
-👋 Hello! I'm a passionate, self-driven developer evolving into a full-stack Web3 Engineer and a meticulous Smart Contract Auditor.
-
-🚀 Crafting Code & Auditing Contracts
-
-💻 My days are fueled by the excitement of turning thoughtful code into powerful, secure, and efficient applications. Whether I'm developing decentralized platforms or meticulously auditing smart contracts, precision and functionality are my north stars.
-
-📈 Blockchain Economics Enthusiast
-
-🔍 Fascinated by the economic intricacies powering blockchain ecosystems, I actively explore Monetary Economics and decentralized finance, understanding the pivotal role these systems play in reshaping our digital future.
+👋 Hello! I'm a passionate, and strong believer of self-learning. I am finance by professional and programming by interest, and I am aiming to combine both the skills. 
 
 📜 Bitcoin Historian
 
 🌍 Deeply intrigued by Bitcoin's revolutionary journey, I dive into its history, evolution, and transformative impact. Uncovering the mysteries surrounding Satoshi Nakamoto and the innovations by pioneers like Nick Szabo fuels my curiosity.
-The history of Bitcoin which I have divided into Part I & Part II can be founded at: https://tiktok.com/@finance2it
 
 🎯 My Mission
 
-🎓 My goal is clear and ambitious: to master Web3 as a versatile full-stack developer and become a reliable, respected auditor of smart contracts, safeguarding the future of decentralized applications, and finance professional well-equipped with the programming skills. 
+🎓 My goal is clear, to keep learning accounting, smart contract, and web development with specific focus on TypeScript, JavaScript, Python, and Solidity and framework like NextJS and Tanstack Start. 
 
 🌱 Currently Learning
 
