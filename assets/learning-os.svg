@@ -1,0 +1,85 @@
+<svg width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Pema Wangchuk Learning Operating System</title>
+  <desc id="desc">A visual map connecting accounting, smart contracts, web development, Bitcoin history, and the technologies Pema is learning.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1280" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#030712"/>
+      <stop offset="0.44" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#042F2E"/>
+    </linearGradient>
+    <linearGradient id="path" x1="162" y1="278" x2="1090" y2="278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="0.5" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="cardStroke" x1="140" y1="130" x2="1138" y2="398" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#F59E0B" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0.5"/>
+    </linearGradient>
+    <radialGradient id="gold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(654 86) rotate(90) scale(330 620)">
+      <stop stop-color="#F59E0B" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" fill-opacity="0.09"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="520" rx="32" fill="url(#panel)"/>
+  <rect width="1280" height="520" rx="32" fill="url(#gold)"/>
+  <rect width="1280" height="520" rx="32" fill="url(#dots)"/>
+
+  <text x="80" y="82" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="800">Learning Operating System</text>
+  <text x="82" y="116" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Finance discipline, programming curiosity, and decentralized systems thinking.</text>
+
+  <rect x="80" y="156" width="1120" height="276" rx="30" fill="#020617" fill-opacity="0.55" stroke="url(#cardStroke)" stroke-width="1.5"/>
+  <path d="M190 294 C328 214 404 344 540 266 C692 178 744 348 892 270 C990 220 1058 230 1120 176" stroke="url(#path)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M190 334 C344 314 448 402 580 336 C730 260 838 374 984 318 C1066 286 1110 254 1152 230" stroke="#FFFFFF" stroke-opacity="0.11" stroke-width="2" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="124" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.35"/>
+    <text x="154" y="242" fill="#BAE6FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">FOUNDATION</text>
+    <text x="154" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Accounting</text>
+    <text x="154" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Numbers, discipline, and</text>
+    <text x="154" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">finance-grade judgment.</text>
+
+    <rect x="418" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.42"/>
+    <text x="448" y="242" fill="#FDE68A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">PROTOCOL</text>
+    <text x="448" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Smart Contracts</text>
+    <text x="448" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Solidity precision for</text>
+    <text x="448" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">trust-minimized logic.</text>
+
+    <rect x="712" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#2DD4BF" stroke-opacity="0.38"/>
+    <text x="742" y="242" fill="#99F6E4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">INTERFACE</text>
+    <text x="742" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Web Development</text>
+    <text x="742" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Next.js experiences that</text>
+    <text x="742" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">make systems usable.</text>
+
+    <rect x="1006" y="200" width="142" height="150" rx="24" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.35"/>
+    <text x="1034" y="242" fill="#DDD6FE" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">LENS</text>
+    <text x="1034" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Bitcoin</text>
+    <text x="1034" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">History,</text>
+    <text x="1034" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">evolution, impact.</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
+    <rect x="80" y="456" width="126" height="34" rx="17" fill="#172554" fill-opacity="0.78" stroke="#38BDF8" stroke-opacity="0.34"/>
+    <text x="143" y="478" text-anchor="middle" fill="#DBEAFE">TypeScript</text>
+    <rect x="218" y="456" width="122" height="34" rx="17" fill="#422006" fill-opacity="0.78" stroke="#F59E0B" stroke-opacity="0.34"/>
+    <text x="279" y="478" text-anchor="middle" fill="#FEF3C7">JavaScript</text>
+    <rect x="352" y="456" width="92" height="34" rx="17" fill="#052E16" fill-opacity="0.78" stroke="#22C55E" stroke-opacity="0.34"/>
+    <text x="398" y="478" text-anchor="middle" fill="#DCFCE7">Python</text>
+    <rect x="456" y="456" width="88" height="34" rx="17" fill="#312E81" fill-opacity="0.78" stroke="#A78BFA" stroke-opacity="0.34"/>
+    <text x="500" y="478" text-anchor="middle" fill="#EDE9FE">Solidity</text>
+    <rect x="556" y="456" width="92" height="34" rx="17" fill="#020617" fill-opacity="0.9" stroke="#E5E7EB" stroke-opacity="0.3"/>
+    <text x="602" y="478" text-anchor="middle" fill="#F8FAFC">Next.js</text>
+    <rect x="660" y="456" width="102" height="34" rx="17" fill="#042F2E" fill-opacity="0.78" stroke="#2DD4BF" stroke-opacity="0.34"/>
+    <text x="711" y="478" text-anchor="middle" fill="#CCFBF1">TanStack</text>
+  </g>
+
+  <text x="1200" y="480" text-anchor="end" fill="#64748B" font-family="JetBrains Mono, Consolas, monospace" font-size="14">learn -> build -> refine</text>
+</svg>

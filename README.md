@@ -6,6 +6,8 @@
 
 <h1>👋 Hello, I'm Pema Wangchuk</h1>
 
+<strong>Finance mind. Builder spirit. Bitcoin history lens.</strong>
+
 <br />
 <br />
 
@@ -52,15 +54,30 @@
 
 > 🎓 My goal is clear: to keep learning accounting, smart contracts, and web development with a specific focus on **TypeScript, JavaScript, Python, and Solidity**, and frameworks like **Next.js** and **TanStack**.
 
+<div align="center">
+  <img src="./assets/learning-os.svg" alt="Learning operating system showing accounting, smart contracts, web development, Bitcoin history, and current technologies" />
+</div>
+
 ---
 
 ## 🌱 Currently Immersed In
 
-| Focus | Craft |
-| --- | --- |
-| 🌐 **Next.js** | Crafting dynamic and efficient web experiences. |
-| 📜 **Solidity** | Bringing smart contracts to life with precision. |
-| ⚙️ **TypeScript & JavaScript** | Building robust and scalable solutions. |
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>🌐 Next.js</h3>
+      <p>Crafting dynamic and efficient web experiences.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>📜 Solidity</h3>
+      <p>Bringing smart contracts to life with precision.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>⚙️ TypeScript & JavaScript</h3>
+      <p>Building robust and scalable solutions.</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
