@@ -37,33 +37,33 @@
   <text x="82" y="116" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Finance discipline, programming curiosity, and decentralized systems thinking.</text>
 
   <rect x="80" y="156" width="1120" height="276" rx="30" fill="#020617" fill-opacity="0.55" stroke="url(#cardStroke)" stroke-width="1.5"/>
-  <path d="M190 294 C328 214 404 344 540 266 C692 178 744 348 892 270 C990 220 1058 230 1120 176" stroke="url(#path)" stroke-width="4" stroke-linecap="round"/>
-  <path d="M190 334 C344 314 448 402 580 336 C730 260 838 374 984 318 C1066 286 1110 254 1152 230" stroke="#FFFFFF" stroke-opacity="0.11" stroke-width="2" stroke-linecap="round"/>
+  <path d="M186 296 C318 214 404 344 534 266 C680 178 746 348 884 270 C988 218 1058 230 1120 176" stroke="url(#path)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M186 338 C338 314 444 402 574 336 C720 260 838 374 978 318 C1062 286 1110 254 1152 230" stroke="#FFFFFF" stroke-opacity="0.11" stroke-width="2" stroke-linecap="round"/>
 
   <g filter="url(#shadow)">
-    <rect x="124" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.35"/>
-    <text x="154" y="242" fill="#BAE6FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">FOUNDATION</text>
-    <text x="154" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Accounting</text>
-    <text x="154" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Numbers, discipline, and</text>
-    <text x="154" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">finance-grade judgment.</text>
+    <rect x="112" y="192" width="252" height="166" rx="24" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.35"/>
+    <text x="140" y="234" fill="#BAE6FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1">FOUNDATION</text>
+    <text x="140" y="271" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">Accounting</text>
+    <text x="140" y="306" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Numbers, discipline, and</text>
+    <text x="140" y="330" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">finance-grade judgment.</text>
 
-    <rect x="418" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.42"/>
-    <text x="448" y="242" fill="#FDE68A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">PROTOCOL</text>
-    <text x="448" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Smart Contracts</text>
-    <text x="448" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Solidity precision for</text>
-    <text x="448" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">trust-minimized logic.</text>
+    <rect x="388" y="192" width="264" height="166" rx="24" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.42"/>
+    <text x="416" y="234" fill="#FDE68A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1">PROTOCOL</text>
+    <text x="416" y="271" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="800">Smart Contracts</text>
+    <text x="416" y="306" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Solidity precision for</text>
+    <text x="416" y="330" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">trust-minimized logic.</text>
 
-    <rect x="712" y="200" width="245" height="150" rx="24" fill="#0F172A" stroke="#2DD4BF" stroke-opacity="0.38"/>
-    <text x="742" y="242" fill="#99F6E4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">INTERFACE</text>
-    <text x="742" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Web Development</text>
-    <text x="742" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Next.js experiences that</text>
-    <text x="742" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">make systems usable.</text>
+    <rect x="676" y="192" width="284" height="166" rx="24" fill="#0F172A" stroke="#2DD4BF" stroke-opacity="0.38"/>
+    <text x="704" y="234" fill="#99F6E4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1">INTERFACE</text>
+    <text x="704" y="271" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">Web Development</text>
+    <text x="704" y="306" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Next.js experiences that</text>
+    <text x="704" y="330" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">make systems usable.</text>
 
-    <rect x="1006" y="200" width="142" height="150" rx="24" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.35"/>
-    <text x="1034" y="242" fill="#DDD6FE" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="1.2">LENS</text>
-    <text x="1034" y="279" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Bitcoin</text>
-    <text x="1034" y="310" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">History,</text>
-    <text x="1034" y="334" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">evolution, impact.</text>
+    <rect x="984" y="192" width="184" height="166" rx="24" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.35"/>
+    <text x="1012" y="234" fill="#DDD6FE" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1">LENS</text>
+    <text x="1012" y="271" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">Bitcoin</text>
+    <text x="1012" y="306" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">History, evolution,</text>
+    <text x="1012" y="330" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">and impact.</text>
   </g>
 
   <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">
