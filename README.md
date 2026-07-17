@@ -29,7 +29,7 @@
   <tr>
     <td width="50%" valign="top">
       <h3>🤠 Who Am I?</h3>
-      <p>👋 Hello! I'm a passionate believer in self-learning. I am a finance professional by trade and a programmer by interest, aiming to combine both skills to build innovative solutions.</p>
+      <p>👋 Hello! I'm a passionate believer in self-learning. I am a finance professional by trade and a programmer by interest, aiming to combine both skills to build innovative and creative solutions.</p>
     </td>
     <td width="50%" valign="top">
       <h3>📜 Bitcoin Historian</h3>
