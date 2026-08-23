@@ -53,19 +53,6 @@
 
 <br>
 
-## About this page
-
-Every image above is generated, not drawn by hand. Design tokens go in, themed SVG comes out — one file per theme, paired with `<picture>` so the artwork follows your GitHub theme. There are no third-party badge services in this README, so nothing here can rate-limit, break, or quietly disappear.
-
-```bash
-npm run build      # regenerate every asset from scripts/
-npm run preview    # screenshot both themes for review
-```
-
-Edit the copy in [`scripts/profile.mjs`](scripts/profile.mjs) or a colour in [`scripts/tokens.mjs`](scripts/tokens.mjs)
-and the layout re-solves itself: text is measured, chips flow and wrap, card heights follow their
-content. Animation respects `prefers-reduced-motion`.
-
 <br>
 
 <picture>

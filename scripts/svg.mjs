@@ -156,14 +156,14 @@ export function linearDef(id, from, to, { x1 = '0%', y1 = '0%', x2 = '100%', y2 
     </linearGradient>`;
 }
 
-/** Pill with an optional leading dot. Returns the markup and its own width. */
-export function chip(label, { x, y, t, dot, size = 13.5, padX = 14, h = 30, fill, stroke, color, mono = false, tracking = 0 }) {
+/** Square-cornered tag with an optional leading dot. Returns markup and width. */
+export function chip(label, { x, y, t, dot, size = 16, padX = 16, h = 38, fill, stroke, color, mono = false, tracking = 0 }) {
   const textW = measure(label, size, { mono, tracking });
-  const dotW = dot ? 15 : 0;
-  const w = textW + dotW + padX * 2;
+  const dotW = dot ? 18 : 0;
+  const w = Math.ceil(textW + dotW + padX * 2);
   const cy = y + h / 2;
-  const body = rect({ x, y, w, h, r: h / 2, fill: fill ?? t.surfaceAlt, stroke: stroke ?? t.border, strokeWidth: 1 });
-  const marker = dot ? circle({ cx: x + padX + 4, cy, r: 3.5, fill: dot }) : '';
+  const body = rect({ x, y, w, h, fill: fill ?? t.surfaceAlt, stroke: stroke ?? t.border, strokeWidth: 1 });
+  const marker = dot ? circle({ cx: x + padX + 4.5, cy, r: 4.5, fill: dot }) : '';
   const label_ = text(label, {
     x: x + padX + dotW,
     y: cy + size * 0.35,
