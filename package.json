@@ -1,0 +1,14 @@
+{
+  "name": "pemawangchuk2023-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generator for the artwork on github.com/pemawangchuk2023",
+  "scripts": {
+    "build": "node scripts/build-assets.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

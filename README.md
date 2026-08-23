@@ -1,121 +1,82 @@
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+  <img src="./assets/hero-light.svg" width="100%" alt="Pema Wangchuk — Deputy Chief Finance Officer, Cluster Finance Services, Bhutan. Public-sector finance by day, production software by night. Based in Thimphu, Bhutan, and open to collaborate.">
+</picture>
 
-<img src="./assets/profile-banner.svg" alt="Pema Wangchuk — finance professional, systems builder, and Bitcoin history researcher" width="100%" />
+<p align="center">
+  <a href="https://github.com/pemawangchuk2023?tab=repositories">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-repos-dark.svg">
+      <img src="./assets/btn-repos-light.svg" height="40" alt="Repositories">
+    </picture>
+  </a>
+  <a href="https://linkedin.com/in/pema-wangchuk-5561aa224">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-linkedin-dark.svg">
+      <img src="./assets/btn-linkedin-light.svg" height="40" alt="LinkedIn">
+    </picture>
+  </a>
+  <a href="https://github.com/pemawangchuk2023?tab=stars">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-stars-dark.svg">
+      <img src="./assets/btn-stars-light.svg" height="40" alt="Reading list">
+    </picture>
+  </a>
+</p>
 
-<br />
+<br>
 
-### Finance discipline · Software craft · Decentralized systems
+## What I do
 
-I study how sound financial thinking and thoughtful software can make complex systems more useful, transparent, and durable.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/domains-dark.svg">
+  <img src="./assets/domains-light.svg" width="100%" alt="Three domains. 01 Public finance: Deputy Chief Finance Officer for cluster finance services — budgets, controls and accountability at ministry scale. 02 Software engineering: full-stack TypeScript, Next.js applications with real auth, real databases and interfaces that survive actual users. 03 Open protocols: Bitcoin's history and cypherpunk roots, plus the Solidity contracts that let strangers coordinate without a middleman.">
+</picture>
 
-<br />
+<br>
 
-<a href="https://github.com/pemawangchuk2023?tab=repositories"><strong>Explore my work →</strong></a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://linkedin.com/in/pema-wangchuk-5561aa224"><strong>Connect on LinkedIn ↗</strong></a>
+## Stack
 
-</div>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/stack-dark.svg">
+  <img src="./assets/stack-light.svg" width="100%" alt="Interface: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, Radix UI, GSAP, Three.js. Data and auth: Node.js, PostgreSQL, MongoDB, Mongoose, Better Auth, Clerk, NextAuth, AWS S3. Protocols and AI: Solidity, OpenAI, Vercel AI SDK, Zod, Inngest, Vite, Vercel.">
+</picture>
 
-<br />
+<br>
 
-## The short version
+## How I work
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>01 · Finance</h3>
-      <p>My professional foundation. It shapes how I think about risk, incentives, accountability, and long-term value.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>02 · Engineering</h3>
-      <p>My builder's toolkit. I learn by turning ideas into clear interfaces, dependable logic, and working software.</p>
-    </td>
-    <td width="34%" valign="top">
-      <h3>03 · Bitcoin</h3>
-      <p>My research lens. I follow its history, cypherpunk roots, and the people and ideas that made it possible.</p>
-    </td>
-  </tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/loop-dark.svg">
+  <img src="./assets/loop-light.svg" width="100%" alt="A four-step loop. 01 Understand: find the financial question hiding under the feature request. 02 Model: map incentives, data and failure modes before writing code. 03 Build: ship a clear interface over logic that can be audited. 04 Explain: write it down, because if it cannot be explained it is not finished. Then refine and repeat.">
+</picture>
 
-> I am most interested in the space where **financial judgment**, **software engineering**, and **open protocols** meet.
+<br>
 
-<br />
+## About this page
 
-## How I am building
+Every image above is generated, not drawn by hand. Design tokens go in, themed SVG comes out — one file per theme, paired with `<picture>` so the artwork follows your GitHub theme. There are no third-party badge services in this README, so nothing here can rate-limit, break, or quietly disappear.
 
-<img src="./assets/learning-os.svg" alt="Pema's learning loop: understand the financial problem, model the system, build the interface, and refine through research" width="100%" />
+```bash
+npm run build      # regenerate every asset from scripts/
+npm run preview    # screenshot both themes for review
+```
 
-<br />
+Edit the copy in [`scripts/profile.mjs`](scripts/profile.mjs) or a colour in [`scripts/tokens.mjs`](scripts/tokens.mjs)
+and the layout re-solves itself: text is measured, chips flow and wrap, card heights follow their
+content. Animation respects `prefers-reduced-motion`.
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Now</h3>
-      <p>Deepening my understanding of accounting, smart contracts, and modern web development through deliberate practice.</p>
-      <ul>
-        <li>Building robust web experiences</li>
-        <li>Studying trust-minimized systems</li>
-        <li>Connecting technical choices to financial outcomes</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3>North star</h3>
-      <p>Create practical products at the intersection of finance and decentralized technology—without losing clarity, usability, or human context.</p>
-      <p><strong>Learn → build → explain → refine.</strong></p>
-    </td>
-  </tr>
-</table>
+<br>
 
-<br />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/footer-dark.svg">
+  <img src="./assets/footer-light.svg" width="100%" alt="Let's compare notes — public finance, Bitcoin history, web engineering, smart contracts.">
+</picture>
 
-## Working toolkit
-
-<details open>
-  <summary><strong>Web engineering</strong></summary>
-  <br />
-  TypeScript · JavaScript · React · Next.js · Tailwind CSS · TanStack · Node.js
-</details>
-
-<details>
-  <summary><strong>Protocols & data</strong></summary>
-  <br />
-  Solidity · Smart contracts · Python · Supabase · MongoDB
-</details>
-
-<details>
-  <summary><strong>Daily tools</strong></summary>
-  <br />
-  Git · GitHub · VS Code
-</details>
-
-<br />
-
-## Principles I bring to the work
-
-| Principle | What it means in practice |
-| :--- | :--- |
-| **Clarity over noise** | Make the important decision obvious and remove what does not help. |
-| **Systems over features** | Understand incentives, dependencies, and failure modes before polishing the surface. |
-| **Evidence over hype** | Learn from history, test assumptions, and explain trade-offs honestly. |
-| **Progress over posturing** | Ship, reflect, document, and improve with consistency. |
-
-<br />
-
-## Let's compare notes
-
-If you are exploring finance, Bitcoin history, web engineering, or smart contracts, I would be glad to connect.
-
-<div align="center">
-
-<a href="https://linkedin.com/in/pema-wangchuk-5561aa224"><strong>LinkedIn</strong></a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://github.com/pemawangchuk2023?tab=repositories"><strong>Repositories</strong></a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://github.com/pemawangchuk2023?tab=stars"><strong>Reading list</strong></a>
-
-<br />
-<br />
-
-<sub>Designed to load fast, read clearly, and live entirely on GitHub.</sub>
-
-</div>
+<p align="center">
+  <a href="https://linkedin.com/in/pema-wangchuk-5561aa224">LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/pemawangchuk2023?tab=repositories">Repositories</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/pemawangchuk2023?tab=stars">Reading list</a>
+</p>

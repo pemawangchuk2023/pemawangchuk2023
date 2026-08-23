@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 176" width="1200" height="176" role="img" aria-labelledby="t d" fill="none">
+<title id="t">Let's compare notes.</title>
+<desc id="d">Let's compare notes. Public finance  ·  Bitcoin history  ·  Web engineering  ·  Smart contracts</desc>
+<defs><radialGradient id="fglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0.154"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient><linearGradient id="fbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFDFE"/>
+      <stop offset="100%" stop-color="#F3F7FA"/>
+    </linearGradient><clipPath id="fcard"><rect x="0.75" y="1" width="1198.5" height="174" rx="22"/></clipPath><pattern id="fgrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#0C1522" stroke-width="1" opacity="0.045"/>
+    </pattern></defs>
+<style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+
+<rect x="0.75" y="1" width="1198.5" height="174" rx="22" fill="url(#fbg)"/>
+<g clip-path="url(#fcard)">
+  <rect x="0.75" y="1" width="1198.5" height="174" fill="url(#fgrid)"/>
+  <ellipse cx="600" cy="200" rx="520" ry="180" fill="url(#fglow)" opacity="0.22"/>
+</g>
+<rect x="0.75" y="1" width="1198.5" height="174" rx="22" fill="none" stroke="#DCE3EB" stroke-width="1.25"/>
+<text x="600" y="54" font-family="ui-monospace,SFMono-Regular,'SF Mono','Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace" font-size="11" font-weight="700" fill="#78879A" letter-spacing="3.2" text-anchor="middle">GET IN TOUCH</text>
+<text x="600" y="100" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="32" font-weight="700" fill="#0C1522" letter-spacing="-0.8" text-anchor="middle">Let's compare notes.</text>
+<text x="600" y="128" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="14.5" font-weight="450" fill="#4C5A6B" text-anchor="middle">Public finance  ·  Bitcoin history  ·  Web engineering  ·  Smart contracts</text>
+<circle cx="572" cy="150" r="3.5" fill="#2563EB" opacity="0.85"/><circle cx="590.5" cy="150" r="3.5" fill="#7C3AED" opacity="0.85"/><circle cx="609" cy="150" r="3.5" fill="#059669" opacity="0.85"/><circle cx="627.5" cy="150" r="3.5" fill="#C2740A" opacity="0.85"/>
+</svg>
