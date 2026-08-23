@@ -1,164 +1,121 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F59E0B,45:0F766E,100:06111F&height=110&section=header" alt="Header wave" />
-
-<img src="./assets/profile-banner.svg" alt="Pema Wangchuk - Finance Professional, Programmer by Interest, and Bitcoin Historian" />
+<img src="./assets/profile-banner.svg" alt="Pema Wangchuk — finance professional, systems builder, and Bitcoin history researcher" width="100%" />
 
 <br />
-<br />
 
-<img width="150" alt="Pema Wangchuk" src="https://github.com/user-attachments/assets/3e314e7c-8b22-4f18-badb-2ba87b60ac38" />
+### Finance discipline · Software craft · Decentralized systems
 
-<h1>👋 Hello, I'm Pema Wangchuk</h1>
-
-<h3>Finance mind. Builder spirit. Bitcoin history lens.</h3>
-
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2400&pause=700&color=F59E0B&center=true&vCenter=true&width=760&lines=Self-learning+with+discipline;Finance+%2B+code+%2B+decentralized+systems;Accounting+%7C+Smart+Contracts+%7C+Web+Development" alt="Animated profile headline" />
+I study how sound financial thinking and thoughtful software can make complex systems more useful, transparent, and durable.
 
 <br />
-<br />
 
-<a href="https://linkedin.com/in/pema-wangchuk-5561aa224">
-  <img src="https://img.shields.io/badge/LinkedIn-Pema%20Wangchuk-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn - Pema Wangchuk" />
-</a>
-<img src="https://komarev.com/ghpvc/?username=pemawangchuk2023&style=for-the-badge&color=F59E0B&label=Profile+Views" alt="Profile views" />
-<img src="https://img.shields.io/github/followers/pemawangchuk2023?style=for-the-badge&logo=github&label=Followers&color=111827" alt="GitHub followers" />
-
-<br />
-<br />
-
-<img src="https://img.shields.io/badge/Finance-Professional-0F766E?style=flat-square&logo=googleanalytics&logoColor=white" alt="Finance Professional" />
-<img src="https://img.shields.io/badge/Programmer-By%20Interest-111827?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Programmer by Interest" />
-<img src="https://img.shields.io/badge/Focus-Bitcoin%20History-F7931A?style=flat-square&logo=bitcoin&logoColor=white" alt="Focus - Bitcoin History" />
-<img src="https://img.shields.io/badge/Learning-Next.js%20%7C%20Solidity%20%7C%20TypeScript-111827?style=flat-square&logo=nextdotjs&logoColor=white" alt="Learning - Next.js, Solidity, TypeScript" />
+<a href="https://github.com/pemawangchuk2023?tab=repositories"><strong>Explore my work →</strong></a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://linkedin.com/in/pema-wangchuk-5561aa224"><strong>Connect on LinkedIn ↗</strong></a>
 
 </div>
 
----
-
-<div align="center">
-
-### <a href="#-professional-snapshot">Professional Snapshot</a> · <a href="#-technical-arsenal">Technical Arsenal</a> · <a href="#-my-mission">Mission</a> · <a href="#-currently-immersed-in">Currently Learning</a> · <a href="#-github-metrics">GitHub Metrics</a> · <a href="#-connect-with-me">Connect</a>
-
-</div>
-
----
-
-## ✦ Professional Snapshot
-
-<table>
-  <tr>
-    <td width="58%" valign="top">
-      <h3>🤠 Who Am I?</h3>
-      <p>👋 Hello! I'm a passionate believer in self-learning. I am a finance professional by trade and a programmer by interest, aiming to combine both skills to build innovative solutions.</p>
-      <br />
-      <table>
-        <tr>
-          <td align="center"><strong>💼 Finance</strong><br />Professional foundation</td>
-          <td align="center"><strong>🧠 Self-learning</strong><br />Discipline-driven growth</td>
-        </tr>
-        <tr>
-          <td align="center"><strong>🧩 Builder</strong><br />Web + smart contracts</td>
-          <td align="center"><strong>₿ Research</strong><br />Bitcoin history lens</td>
-        </tr>
-      </table>
-    </td>
-    <td width="42%" valign="top">
-      <h3>📜 Bitcoin Historian</h3>
-      <p>🌍 I am deeply intrigued by Bitcoin's revolutionary journey. I enjoy exploring its history, evolution, and transformative impact—from the mysteries of <strong>Satoshi Nakamoto</strong> to the groundbreaking work of pioneers like <strong>Nick Szabo</strong>.</p>
-      <br />
-      <p align="center">
-        <img src="https://img.shields.io/badge/Satoshi%20Nakamoto-Origin%20Study-F7931A?style=for-the-badge&logo=bitcoin&logoColor=white" alt="Satoshi Nakamoto Origin Study" />
-        <br />
-        <img src="https://img.shields.io/badge/Nick%20Szabo-Cypherpunk%20Influence-334155?style=for-the-badge" alt="Nick Szabo Cypherpunk Influence" />
-      </p>
-    </td>
-  </tr>
-</table>
-
----
-
-<div align="center">
-
-## 🚀 Technical Arsenal
-
-<p><strong>Languages, frameworks, tools, and platforms I am actively learning and using.</strong></p>
-
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=ts,js,nextjs,react,tailwind,nodejs,supabase,mongodb,py,solidity,git,github,vscode&perline=7" alt="TypeScript, JavaScript, Next.js, React, Tailwind CSS, Node.js, Supabase, MongoDB, Python, Solidity, Git, GitHub, VS Code" />
-</a>
-
-<br />
 <br />
 
-<table>
-  <tr>
-    <td align="center" width="25%"><strong>Frontend</strong><br />Next.js · React · Tailwind CSS</td>
-    <td align="center" width="25%"><strong>Languages</strong><br />TypeScript · JavaScript · Python</td>
-    <td align="center" width="25%"><strong>Web3</strong><br />Solidity · Smart Contracts</td>
-    <td align="center" width="25%"><strong>Data / Tools</strong><br />Supabase · MongoDB · Git · GitHub</td>
-  </tr>
-</table>
-
-</div>
-
----
-
-## 🎯 My Mission
-
-> 🎓 My goal is clear: to keep learning accounting, smart contracts, and web development with a specific focus on **TypeScript, JavaScript, Python, and Solidity**, and frameworks like **Next.js** and **TanStack**.
-
-<div align="center">
-  <img src="./assets/learning-os.svg" alt="Learning operating system showing accounting, smart contracts, web development, Bitcoin history, and current technologies" />
-</div>
-
----
-
-## 🌱 Currently Immersed In
+## The short version
 
 <table>
   <tr>
     <td width="33%" valign="top">
-      <h3>🌐 Next.js</h3>
-      <p>Crafting dynamic and efficient web experiences.</p>
-      <p><img src="https://img.shields.io/badge/Focus-Dynamic%20Web%20Experiences-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js focus" /></p>
+      <h3>01 · Finance</h3>
+      <p>My professional foundation. It shapes how I think about risk, incentives, accountability, and long-term value.</p>
     </td>
     <td width="33%" valign="top">
-      <h3>📜 Solidity</h3>
-      <p>Bringing smart contracts to life with precision.</p>
-      <p><img src="https://img.shields.io/badge/Focus-Smart%20Contracts-363636?style=flat-square&logo=solidity&logoColor=white" alt="Solidity focus" /></p>
+      <h3>02 · Engineering</h3>
+      <p>My builder's toolkit. I learn by turning ideas into clear interfaces, dependable logic, and working software.</p>
     </td>
-    <td width="33%" valign="top">
-      <h3>⚙️ TypeScript & JavaScript</h3>
-      <p>Building robust and scalable solutions.</p>
-      <p><img src="https://img.shields.io/badge/Focus-Robust%20Solutions-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript and JavaScript focus" /></p>
+    <td width="34%" valign="top">
+      <h3>03 · Bitcoin</h3>
+      <p>My research lens. I follow its history, cypherpunk roots, and the people and ideas that made it possible.</p>
     </td>
   </tr>
 </table>
 
----
+> I am most interested in the space where **financial judgment**, **software engineering**, and **open protocols** meet.
 
-<div align="center">
+<br />
 
+## How I am building
 
-## 📫 Connect with Me
+<img src="./assets/learning-os.svg" alt="Pema's learning loop: understand the financial problem, model the system, build the interface, and refine through research" width="100%" />
+
+<br />
 
 <table>
   <tr>
-    <td width="65%" valign="middle">
-      <p>If you are interested in finance, Bitcoin history, web development, smart contracts, or self-learning, feel free to connect.</p>
-      <p><i>"Let’s code, innovate, and shape the decentralized future together! 🚀✨"</i></p>
+    <td width="50%" valign="top">
+      <h3>Now</h3>
+      <p>Deepening my understanding of accounting, smart contracts, and modern web development through deliberate practice.</p>
+      <ul>
+        <li>Building robust web experiences</li>
+        <li>Studying trust-minimized systems</li>
+        <li>Connecting technical choices to financial outcomes</li>
+      </ul>
     </td>
-    <td width="35%" align="center" valign="middle">
-      <a href="https://linkedin.com/in/pema-wangchuk-5561aa224">
-        <img src="https://img.shields.io/badge/Pema%20Wangchuk-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn - Pema Wangchuk" />
-      </a>
+    <td width="50%" valign="top">
+      <h3>North star</h3>
+      <p>Create practical products at the intersection of finance and decentralized technology—without losing clarity, usability, or human context.</p>
+      <p><strong>Learn → build → explain → refine.</strong></p>
     </td>
   </tr>
 </table>
 
+<br />
+
+## Working toolkit
+
+<details open>
+  <summary><strong>Web engineering</strong></summary>
+  <br />
+  TypeScript · JavaScript · React · Next.js · Tailwind CSS · TanStack · Node.js
+</details>
+
+<details>
+  <summary><strong>Protocols & data</strong></summary>
+  <br />
+  Solidity · Smart contracts · Python · Supabase · MongoDB
+</details>
+
+<details>
+  <summary><strong>Daily tools</strong></summary>
+  <br />
+  Git · GitHub · VS Code
+</details>
+
+<br />
+
+## Principles I bring to the work
+
+| Principle | What it means in practice |
+| :--- | :--- |
+| **Clarity over noise** | Make the important decision obvious and remove what does not help. |
+| **Systems over features** | Understand incentives, dependencies, and failure modes before polishing the surface. |
+| **Evidence over hype** | Learn from history, test assumptions, and explain trade-offs honestly. |
+| **Progress over posturing** | Ship, reflect, document, and improve with consistency. |
+
+<br />
+
+## Let's compare notes
+
+If you are exploring finance, Bitcoin history, web engineering, or smart contracts, I would be glad to connect.
+
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F59E0B,45:0F766E,100:06111F&height=120&section=footer" alt="Footer wave" />
+<a href="https://linkedin.com/in/pema-wangchuk-5561aa224"><strong>LinkedIn</strong></a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://github.com/pemawangchuk2023?tab=repositories"><strong>Repositories</strong></a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://github.com/pemawangchuk2023?tab=stars"><strong>Reading list</strong></a>
+
+<br />
+<br />
+
+<sub>Designed to load fast, read clearly, and live entirely on GitHub.</sub>
 
 </div>
