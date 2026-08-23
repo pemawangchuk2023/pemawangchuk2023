@@ -140,26 +140,6 @@
 
 <div align="center">
 
-## 💹 GitHub Metrics
-
-<p><strong>A quick look at my GitHub activity, language focus, and development consistency.</strong></p>
-
-<img height="178" src="https://github-readme-stats.vercel.app/api?username=pemawangchuk2023&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" alt="Pema Wangchuk GitHub Stats" />
-<img height="178" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pemawangchuk2023&layout=compact&theme=tokyonight&hide_border=true" alt="Pema Wangchuk Top Languages" />
-
-<br />
-<br />
-
-<img src="https://streak-stats.demolab.com?user=pemawangchuk2023&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="Pema Wangchuk GitHub Streak" />
-
-<br />
-<br />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=pemawangchuk2023&theme=tokyo-night&hide_border=true&area=true&custom_title=Pema%20Wangchuk%27s%20Contribution%20Graph" alt="Pema Wangchuk contribution graph" />
-
-</div>
-
----
 
 ## 📫 Connect with Me
 
