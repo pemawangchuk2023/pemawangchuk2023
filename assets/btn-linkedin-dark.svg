@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 54" width="171" height="54" role="img" aria-labelledby="t d" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 46" width="160" height="46" role="img" aria-labelledby="t d" fill="none">
 <title id="t">LinkedIn</title>
 <desc id="d">Link to LinkedIn</desc>
 <defs></defs>
 <style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
 
-<rect x="0.75" y="0.75" width="169.5" height="52.5" fill="#141C26"/>
-<rect x="0.75" y="0.75" width="169.5" height="52.5" fill="none" stroke="#232E3B" stroke-width="1.25"/>
-<g transform="translate(24 17)"><path d="M3.5 15.5 L15.5 3.5 M6.5 3.5 H15.5 V12.5" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linecap="butt" stroke-linejoin="miter"/></g>
-<text x="58" y="33" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9EFF6">LinkedIn</text>
-<path d="M141 21 L148 27 L141 33" fill="none" stroke="#6C7D91" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<rect x="0.75" y="0.75" width="158.5" height="44.5" fill="#141C26"/>
+<rect x="0.75" y="0.75" width="158.5" height="44.5" fill="none" stroke="#232E3B" stroke-width="1.25"/>
+<g transform="translate(22 14)"><path d="M3 15 L15 3 M6 3 H15 V12" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linecap="butt" stroke-linejoin="miter"/></g>
+<text x="52" y="29" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#E9EFF6">LinkedIn</text>
+<path d="M133 18 L140 23 L133 28" fill="none" stroke="#6C7D91" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
 </svg>

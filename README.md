@@ -7,19 +7,19 @@
   <a href="https://github.com/pemawangchuk2023?tab=repositories">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-repos-dark.svg">
-      <img src="./assets/btn-repos-light.svg" height="40" alt="Repositories">
+      <img src="./assets/btn-repos-light.svg" height="46" alt="Repositories">
     </picture>
   </a>
   <a href="https://linkedin.com/in/pema-wangchuk-5561aa224">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-linkedin-dark.svg">
-      <img src="./assets/btn-linkedin-light.svg" height="40" alt="LinkedIn">
+      <img src="./assets/btn-linkedin-light.svg" height="46" alt="LinkedIn">
     </picture>
   </a>
   <a href="https://github.com/pemawangchuk2023?tab=stars">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./assets/btn-stars-dark.svg">
-      <img src="./assets/btn-stars-light.svg" height="40" alt="Reading list">
+      <img src="./assets/btn-stars-light.svg" height="46" alt="Reading list">
     </picture>
   </a>
 </p>

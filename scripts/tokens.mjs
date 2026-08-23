@@ -58,5 +58,12 @@ const light = {
 
 export const THEMES = { dark, light };
 
-/** Canvas width shared by every asset so the README column stays aligned. */
-export const W = 1200;
+/**
+ * Canvas width shared by every asset.
+ *
+ * This is deliberately close to GitHub's rendered README column (~880px). The
+ * assets are displayed at width:100%, so a wider canvas would be scaled DOWN
+ * in the browser and every font size would render smaller than it is set here.
+ * At this width the numbers below are close to true on-screen pixels.
+ */
+export const W = 900;

@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 199 54" width="199" height="54" role="img" aria-labelledby="t d" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 46" width="188" height="46" role="img" aria-labelledby="t d" fill="none">
 <title id="t">Repositories</title>
 <desc id="d">Link to Repositories</desc>
 <defs></defs>
 <style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
 
-<rect x="0.75" y="0.75" width="197.5" height="52.5" fill="#F3F7FA"/>
-<rect x="0.75" y="0.75" width="197.5" height="52.5" fill="none" stroke="#DCE3EB" stroke-width="1.25"/>
-<g transform="translate(24 17)"><rect x="0" y="0" width="8" height="8" fill="#2563EB" opacity="1"/><rect x="11" y="0" width="8" height="8" fill="#2563EB" opacity="0.6"/><rect x="0" y="11" width="8" height="8" fill="#2563EB" opacity="0.6"/><rect x="11" y="11" width="8" height="8" fill="#2563EB" opacity="1"/></g>
-<text x="58" y="33" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0C1522">Repositories</text>
-<path d="M169 21 L176 27 L169 33" fill="none" stroke="#78879A" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<rect x="0.75" y="0.75" width="186.5" height="44.5" fill="#F3F7FA"/>
+<rect x="0.75" y="0.75" width="186.5" height="44.5" fill="none" stroke="#DCE3EB" stroke-width="1.25"/>
+<g transform="translate(22 14)"><rect x="0" y="0" width="7.5" height="7.5" fill="#2563EB" opacity="1"/><rect x="10.5" y="0" width="7.5" height="7.5" fill="#2563EB" opacity="0.6"/><rect x="0" y="10.5" width="7.5" height="7.5" fill="#2563EB" opacity="0.6"/><rect x="10.5" y="10.5" width="7.5" height="7.5" fill="#2563EB" opacity="1"/></g>
+<text x="52" y="29" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0C1522">Repositories</text>
+<path d="M161 18 L168 23 L161 28" fill="none" stroke="#78879A" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
 </svg>

@@ -9,14 +9,14 @@
 export const IDENTITY = {
   name: 'Pema Wangchuk',
   handle: 'pemawangchuk2023',
-  eyebrow: 'PUBLIC FINANCE  ×  SOFTWARE ENGINEERING',
-  role: 'Deputy Chief Finance Officer · Cluster Finance Services, Bhutan',
+  eyebrow: 'PUBLIC FINANCE × SOFTWARE',
+  role: 'Deputy Chief Finance Officer · Cluster Finance Services',
   lede: [
-    'Public-sector finance by day, production software by night. I care about',
-    'the same thing in both: systems that stay honest when nobody is watching.',
+    'Public-sector finance by day, production software by night.',
+    'I care about systems that stay honest when nobody is watching.',
   ],
   status: 'OPEN TO COLLABORATE',
-  chips: ['Thimphu, Bhutan', 'Building in public since 2023', 'TypeScript · Solidity · Next.js'],
+  chips: ['Thimphu, Bhutan', 'TypeScript · Solidity · Next.js'],
   links: {
     linkedin: 'https://linkedin.com/in/pema-wangchuk-5561aa224',
     repos: 'https://github.com/pemawangchuk2023?tab=repositories',

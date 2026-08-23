@@ -157,9 +157,9 @@ export function linearDef(id, from, to, { x1 = '0%', y1 = '0%', x2 = '100%', y2 
 }
 
 /** Square-cornered tag with an optional leading dot. Returns markup and width. */
-export function chip(label, { x, y, t, dot, size = 16, padX = 16, h = 38, fill, stroke, color, mono = false, tracking = 0 }) {
+export function chip(label, { x, y, t, dot, size = 15, padX = 14, h = 36, fill, stroke, color, mono = false, tracking = 0 }) {
   const textW = measure(label, size, { mono, tracking });
-  const dotW = dot ? 18 : 0;
+  const dotW = dot ? 16 : 0;
   const w = Math.ceil(textW + dotW + padX * 2);
   const cy = y + h / 2;
   const body = rect({ x, y, w, h, fill: fill ?? t.surfaceAlt, stroke: stroke ?? t.border, strokeWidth: 1 });

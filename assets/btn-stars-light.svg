@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 54" width="195" height="54" role="img" aria-labelledby="t d" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 46" width="184" height="46" role="img" aria-labelledby="t d" fill="none">
 <title id="t">Reading list</title>
 <desc id="d">Link to Reading list</desc>
 <defs></defs>
 <style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
 
-<rect x="0.75" y="0.75" width="193.5" height="52.5" fill="#F3F7FA"/>
-<rect x="0.75" y="0.75" width="193.5" height="52.5" fill="none" stroke="#DCE3EB" stroke-width="1.25"/>
-<g transform="translate(24 17)"><path d="M9.5 0L11.91 6.18L18.54 6.56L13.4 10.77L15.08 17.19L9.5 13.6L3.92 17.19L5.6 10.77L0.46 6.56L7.09 6.18Z" fill="#C2740A"/></g>
-<text x="58" y="33" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0C1522">Reading list</text>
-<path d="M165 21 L172 27 L165 33" fill="none" stroke="#78879A" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
+<rect x="0.75" y="0.75" width="182.5" height="44.5" fill="#F3F7FA"/>
+<rect x="0.75" y="0.75" width="182.5" height="44.5" fill="none" stroke="#DCE3EB" stroke-width="1.25"/>
+<g transform="translate(22 14)"><path d="M9 0L11.29 5.84L17.56 6.22L12.71 10.21L14.29 16.28L9 12.9L3.71 16.28L5.29 10.21L0.44 6.22L6.71 5.84Z" fill="#C2740A"/></g>
+<text x="52" y="29" font-family="'Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#0C1522">Reading list</text>
+<path d="M157 18 L164 23 L157 28" fill="none" stroke="#78879A" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/>
 </svg>
