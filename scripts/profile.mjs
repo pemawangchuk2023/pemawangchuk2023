@@ -2,21 +2,21 @@
  * Single source of truth for everything the generated artwork says.
  *
  * Rule for this file: nothing goes in that is not verifiable from the GitHub
- * profile, the repositories, or their manifests. The stack list below was read
- * out of real package.json files, not assembled from memory.
+ * profile, the repositories, their manifests or the live sites. The stack list
+ * was read out of real package.json files, not assembled from memory.
  */
 
 export const IDENTITY = {
   name: 'Pema Wangchuk',
   handle: 'pemawangchuk2023',
-  eyebrow: 'PUBLIC FINANCE × SOFTWARE',
-  role: 'Deputy Chief Finance Officer · Cluster Finance Services',
+  place: 'THIMPHU, BHUTAN',
+  coords: '27.47° N   89.64° E   ·   2,334 M',
+  role: 'Deputy Chief Finance Officer, Cluster Finance Services',
   lede: [
     'Public-sector finance by day, production software by night.',
-    'I care about systems that stay honest when nobody is watching.',
+    'I build systems that stay honest when nobody is watching.',
   ],
   status: 'OPEN TO COLLABORATE',
-  chips: ['Thimphu, Bhutan', 'TypeScript · Solidity · Next.js'],
   links: {
     linkedin: 'https://linkedin.com/in/pema-wangchuk-5561aa224',
     repos: 'https://github.com/pemawangchuk2023?tab=repositories',
@@ -24,92 +24,59 @@ export const IDENTITY = {
   },
 };
 
-export const DOMAINS = [
+/** Bhutan's fiscal year runs 1 July to 30 June; the hero ridge spans one. */
+export const FY = ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN'];
+
+/** Each row becomes its own image so the README can wrap it in a link. */
+export const WORK = [
   {
-    n: '01',
-    icon: 'ledger',
-    accent: 'accent',
-    title: 'Public finance',
-    body: 'Deputy Chief Finance Officer for cluster finance services — budgets, controls and accountability at ministry scale.',
-    meta: 'BUDGETS · CONTROLS · ASSURANCE',
+    id: 'fdh',
+    year: '2026',
+    name: 'Finance’s Document Hub',
+    href: 'https://www.search-here.space/',
+    body: 'Public finance rules, from pay scales to GST, filed into 17 categories with protected PDF access.',
+    tags: ['NEXT.JS', '17 CATEGORIES', 'PROTECTED PDFS'],
   },
   {
-    n: '02',
-    icon: 'code',
-    accent: 'accent2',
-    title: 'Software engineering',
-    body: 'Full-stack TypeScript. Next.js applications with real auth, real databases and interfaces that survive actual users.',
-    meta: 'NEXT.JS · TYPESCRIPT · POSTGRES',
-  },
-  {
-    n: '03',
-    icon: 'chain',
-    accent: 'accent4',
-    title: 'Open protocols',
-    body: "Bitcoin's history and cypherpunk roots, plus the Solidity contracts that let strangers coordinate without a middleman.",
-    meta: 'BITCOIN · SOLIDITY · CYPHERPUNK',
+    id: 'recorder',
+    year: '2026',
+    name: 'Recorder',
+    href: 'https://recorder-murex-rho.vercel.app',
+    body: 'A private, Loom-style screen recorder that runs entirely in the browser. Nothing is uploaded.',
+    tags: ['WEBCODECS', 'NO BACKEND', 'NEXT.JS'],
   },
 ];
 
-/** Dot colours are the projects' own brand marks; `null` falls back to ink. */
+export const PRACTICE = [
+  { when: 'BY DAY', title: 'Public finance', body: 'Budgets, controls and accountability at ministry scale, as Deputy Chief Finance Officer.' },
+  { when: 'BY NIGHT', title: 'Software', body: 'Full-stack TypeScript: Next.js apps with real auth, real databases and real users.' },
+  { when: 'IN BETWEEN', title: 'Open protocols', body: "Bitcoin's history, its cypherpunk roots, and contracts that remove the middleman." },
+];
+
 export const STACK = [
-  {
-    label: 'INTERFACE',
-    items: [
-      ['TypeScript', '#3178C6'],
-      ['React', '#61DAFB'],
-      ['Next.js', null],
-      ['Tailwind CSS', '#38BDF8'],
-      ['shadcn/ui', null],
-      ['Radix UI', '#6E56CF'],
-      ['GSAP', '#0AE448'],
-      ['Three.js', null],
-    ],
-  },
-  {
-    label: 'DATA & AUTH',
-    items: [
-      ['Node.js', '#5FA04E'],
-      ['PostgreSQL', '#4169E1'],
-      ['MongoDB', '#47A248'],
-      ['Mongoose', '#B03A2E'],
-      ['Better Auth', null],
-      ['Clerk', '#6C47FF'],
-      ['NextAuth', '#A855F7'],
-      ['AWS S3', '#FF9900'],
-    ],
-  },
-  {
-    label: 'PROTOCOLS & AI',
-    items: [
-      ['Solidity', '#8C8C8C'],
-      ['OpenAI', '#10A37F'],
-      ['Vercel AI SDK', null],
-      ['Zod', '#3E67B1'],
-      ['Inngest', '#6366F1'],
-      ['Vite', '#A259FF'],
-      ['Vercel', null],
-    ],
-  },
+  ['INTERFACE', ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'shadcn/ui', 'Radix UI', 'GSAP', 'Three.js']],
+  ['DATA & AUTH', ['Node.js', 'PostgreSQL', 'Drizzle', 'MongoDB', 'Better Auth', 'Clerk', 'NextAuth', 'AWS S3']],
+  ['PROTOCOLS & AI', ['Solidity', 'OpenAI', 'Vercel AI SDK', 'Zod', 'Inngest', 'Vercel']],
 ];
 
-/** Bodies are kept short enough to wrap to two lines at the stage column width. */
+/** A real sequence, so the step numbers carry meaning. */
 export const LOOP = [
-  { n: '01', title: 'Understand', body: 'Find the financial question under the request.' },
-  { n: '02', title: 'Model', body: 'Map incentives, data and failure modes first.' },
-  { n: '03', title: 'Build', body: 'Ship a clear interface over auditable logic.' },
-  { n: '04', title: 'Explain', body: 'If it cannot be explained, it is not done.' },
+  ['01', 'Understand', 'Find the financial question under the request.'],
+  ['02', 'Model', 'Map incentives, data and failure modes first.'],
+  ['03', 'Build', 'Ship a clear interface over auditable logic.'],
+  ['04', 'Explain', 'If it cannot be explained, it is not done.'],
 ];
 
 /** Rendered as self-hosted button images, each wrapped in a real <a> tag. */
 export const LINKS = [
-  { id: 'repos', label: 'Repositories', icon: 'grid', accent: 'accent', href: IDENTITY.links.repos },
-  { id: 'linkedin', label: 'LinkedIn', icon: 'arrow', accent: 'accent2', href: IDENTITY.links.linkedin },
-  { id: 'stars', label: 'Reading list', icon: 'star', accent: 'accent4', href: IDENTITY.links.stars },
+  { id: 'repos', label: 'REPOSITORIES', primary: true, href: IDENTITY.links.repos },
+  { id: 'linkedin', label: 'LINKEDIN', href: IDENTITY.links.linkedin },
+  { id: 'stars', label: 'READING LIST', href: IDENTITY.links.stars },
 ];
 
 export const FOOTER = {
-  eyebrow: 'GET IN TOUCH',
-  headline: "Let's compare notes.",
+  eyebrow: 'CARRIED FORWARD',
+  local: 'THIMPHU  ·  UTC+6',
+  headline: 'Let’s compare notes.',
   sub: 'Public finance  ·  Bitcoin history  ·  Web engineering  ·  Smart contracts',
 };

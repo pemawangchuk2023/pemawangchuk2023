@@ -3,13 +3,15 @@
  *
  *   node scripts/build-assets.mjs
  *
- * Layout is computed rather than hand-placed: text is measured, chips flow and
- * wrap, and card heights follow their content. Change the copy in profile.mjs
- * or a colour in tokens.mjs and the composition re-solves itself.
+ * Layout is computed rather than hand-placed: text is measured from the real
+ * font metrics, lines wrap, and heights follow their content. Change the copy
+ * in profile.mjs or a colour in tokens.mjs and the composition re-solves itself.
  *
- * House style: square corners everywhere, and the canvas is sized to GitHub's
- * README column (see W in tokens.mjs) so the font sizes below are real
- * on-screen pixels rather than values the browser then scales down.
+ * House style, "the ledger": the profile is set like a statement of account.
+ * No boxes and no backgrounds, only hairline rules, a year column, tabular
+ * mono labels and an accountant's double underline under the closing line.
+ * The canvas is sized to GitHub's README column (see W in tokens.mjs) so the
+ * font sizes below are real on-screen pixels.
  */
 
 import { writeFile, mkdir } from 'node:fs/promises';
@@ -17,432 +19,254 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { THEMES, W } from './tokens.mjs';
-import { IDENTITY, DOMAINS, STACK, LOOP, LINKS, FOOTER } from './profile.mjs';
-import {
-  svg, text, lines, rect, circle, path, chip, measure, wrap,
-  gridDef, auroraDef, linearDef, cornerTicks, round,
-} from './svg.mjs';
+import { IDENTITY, FY, WORK, PRACTICE, STACK, LOOP, LINKS, FOOTER } from './profile.mjs';
+import { svg, rect, circle, path, hr, vr, arrow, round } from './svg.mjs';
+import { F, Type } from './type.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'assets');
 
-const PAD = 48; // outer gutter shared by every card
-
-/* ------------------------------------------------------------------ icons -- */
-
-function icon(kind, x, y, color, scale = 1) {
-  const g = (inner) => `<g transform="translate(${x} ${y}) scale(${scale})">${inner}</g>`;
-  if (kind === 'ledger') {
-    return g(
-      rect({ x: 0, y: 12, w: 4.5, h: 10, fill: color, opacity: 0.45 }) +
-      rect({ x: 8, y: 5, w: 4.5, h: 17, fill: color, opacity: 0.75 }) +
-      rect({ x: 16, y: 9, w: 4.5, h: 13, fill: color }) +
-      path('M0 2 L7 8 L13 3 L21 0', { stroke: color, strokeWidth: 1.8, opacity: 0.55 }),
-    );
-  }
-  if (kind === 'code') {
-    return g(
-      path('M7.5 3 L1 11 L7.5 19', { stroke: color, strokeWidth: 2, cap: 'square' }) +
-      path('M14.5 3 L21 11 L14.5 19', { stroke: color, strokeWidth: 2, cap: 'square' }) +
-      path('M12.5 1.5 L9.5 20.5', { stroke: color, strokeWidth: 2, opacity: 0.45, cap: 'square' }),
-    );
-  }
-  return g(
-    rect({ x: 0, y: 1, w: 8.5, h: 8.5, stroke: color, strokeWidth: 1.8 }) +
-    rect({ x: 12.5, y: 1, w: 8.5, h: 8.5, stroke: color, strokeWidth: 1.8 }) +
-    rect({ x: 6.25, y: 13, w: 8.5, h: 8.5, fill: color, opacity: 0.85 }) +
-    path('M8.5 5.25 H12.5', { stroke: color, strokeWidth: 1.8 }) +
-    path('M6 9.5 L9 13 M15 9.5 L12 13', { stroke: color, strokeWidth: 1.8, opacity: 0.6 }),
-  );
-}
+/** Wraps svg() so each builder only has to hand over its Type instance. */
+const doc = ({ T, w = W, ...rest }) => svg({ w, glyphs: T.defs(), ...rest });
 
 /* ------------------------------------------------------------------- hero -- */
 
-function hero(t) {
-  const H = 400;
-  const cardW = W - 2, cardH = H - 2;
-  const orbX = 800, orbY = 190;
-
-  const defs = [
-    linearDef('bg', t.surface, t.surfaceAlt, { x2: '70%', y2: '100%' }),
-    linearDef('rule', t.accent, t.accent2),
-    linearDef('core', t.accent, t.accent2, { x2: '100%', y2: '100%' }),
-    auroraDef('auroraA', t.accent, 0.8),
-    auroraDef('auroraB', t.accent2, 0.7),
-    auroraDef('auroraC', t.accent3, 0.5),
-    auroraDef('orbGlow', t.accent, 0.28),
-    gridDef('grid', t, 36),
-    `<clipPath id="card"><rect x="1" y="1" width="${cardW}" height="${cardH}"/></clipPath>`,
-  ].join('');
-
-  const css = `
-    .drift1{animation:d1 26s ease-in-out infinite}
-    .drift2{animation:d2 34s ease-in-out infinite}
-    .drift3{animation:d3 42s ease-in-out infinite}
-    @keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(42px,24px)}}
-    @keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(-38px,-20px)}}
-    @keyframes d3{0%,100%{transform:translate(0,0)}50%{transform:translate(24px,-26px)}}
-    .orb{transform-box:view-box;transform-origin:${orbX}px ${orbY}px}
-    .o1{animation:spin 19s linear infinite}
-    .o2{animation:spin 31s linear infinite reverse}
-    .o3{animation:spin 46s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .pulse{animation:pulse 2.6s ease-in-out infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
-  `;
-
-  /* Status tag trails the eyebrow so the right half belongs to the glyph alone. */
-  const statusSize = 11.5, statusTrack = 2;
-  const statusW = Math.ceil(measure(IDENTITY.status, statusSize, { mono: true, tracking: statusTrack }) + 46);
-  const statusX = PAD + Math.ceil(measure(IDENTITY.eyebrow, 12.5, { mono: true, tracking: 3 })) + 22;
-  const statusY = 48, statusH = 30;
-  const statusCy = statusY + statusH / 2;
-
-  let cx = PAD;
-  const chipsSvg = IDENTITY.chips
-    .map((label, i) => {
-      const c = chip(label, {
-        x: cx, y: 324, t, size: 14.5, h: 36,
-        dot: [t.accent, t.accent3][i % 2],
-        fill: t.surfaceHi, stroke: t.border,
-      });
-      cx += c.w + 12;
-      return c.svg;
-    })
-    .join('');
-
-  /* Orbit glyph: rings, a scanning arc per ring, and one satellite each. It is
-     allowed to bleed off the right edge, where the card clip crops it. */
-  const polar = (r, deg) => [orbX + Math.cos((deg * Math.PI) / 180) * r, orbY + Math.sin((deg * Math.PI) / 180) * r];
-  const arcPath = (r, from, sweep) => {
-    const [x1, y1] = polar(r, from);
-    const [x2, y2] = polar(r, from + sweep);
-    return `M${round(x1)} ${round(y1)}A${r} ${r} 0 ${sweep > 180 ? 1 : 0} 1 ${round(x2)} ${round(y2)}`;
-  };
-  const ring = (r, stroke, opacity, dash, sw = 1.5) =>
-    circle({ cx: orbX, cy: orbY, r, stroke, strokeWidth: sw, opacity, dash });
-
-  const nodes = Array.from({ length: 6 }, (_, i) => {
-    const [x, y] = polar(74, i * 60 - 90);
-    return circle({ cx: x, cy: y, r: 2.8, fill: t.faint });
-  }).join('');
-
-  const ticks = Array.from({ length: 24 }, (_, i) => {
-    const deg = i * 15;
-    const long = i % 6 === 0;
-    const [x1, y1] = polar(104, deg);
-    const [x2, y2] = polar(long ? 116 : 111, deg);
-    return path(`M${round(x1)} ${round(y1)}L${round(x2)} ${round(y2)}`, {
-      stroke: t.borderHi, strokeWidth: long ? 1.5 : 1, opacity: long ? 1 : 0.55, cap: 'butt',
-    });
-  }).join('');
-
-  const hexPts = Array.from({ length: 6 }, (_, i) => {
-    const [x, y] = polar(25, i * 60 - 90);
-    return `${round(x)} ${round(y)}`;
-  });
-
-  const orbit = [
-    circle({ cx: orbX, cy: orbY, r: 122, fill: 'url(#orbGlow)' }),
-    ticks,
-    ring(100, t.border, 0.9),
-    ring(74, t.borderHi, 0.9, '2 8', 1.25),
-    ring(46, t.borderHi, 0.95),
-    nodes,
-    path(arcPath(100, -110, 84), { stroke: t.accent, strokeWidth: 2.5, opacity: 0.85, cls: 'orb o3', cap: 'butt' }),
-    path(arcPath(74, 40, 60), { stroke: t.accent3, strokeWidth: 2, opacity: 0.8, cls: 'orb o2', cap: 'butt' }),
-    path(arcPath(46, 150, 70), { stroke: t.accent2, strokeWidth: 2.5, opacity: 0.85, cls: 'orb o1', cap: 'butt' }),
-    path(`M${hexPts.join('L')}Z`, { fill: 'url(#core)' }),
-    circle({ cx: orbX, cy: orbY, r: 8, fill: t.surface, opacity: 0.92 }),
-    `<g class="orb o1">${circle({ cx: orbX, cy: orbY - 46, r: 5, fill: t.accent })}</g>`,
-    `<g class="orb o2">${circle({ cx: orbX + 74, cy: orbY, r: 4.5, fill: t.accent2 })}</g>`,
-    `<g class="orb o3">${circle({ cx: orbX, cy: orbY + 100, r: 4.5, fill: t.accent3 })}</g>`,
-  ].join('');
-
-  const body = `
-${rect({ x: 1, y: 1, w: cardW, h: cardH, fill: 'url(#bg)' })}
-<g clip-path="url(#card)">
-  ${rect({ x: 1, y: 1, w: cardW, h: cardH, fill: 'url(#grid)' })}
-  <g opacity="${t.auroraOpacity}">
-    <g class="drift1"><ellipse cx="110" cy="20" rx="360" ry="260" fill="url(#auroraA)"/></g>
-    <g class="drift2"><ellipse cx="820" cy="390" rx="400" ry="280" fill="url(#auroraB)"/></g>
-    <g class="drift3"><ellipse cx="500" cy="-60" rx="300" ry="210" fill="url(#auroraC)"/></g>
-  </g>
-  ${orbit}
-  ${cornerTicks(1, 1, cardW, cardH, t, 12, 15)}
-</g>
-${rect({ x: 1, y: 1, w: cardW, h: cardH, stroke: t.border, strokeWidth: 1.25 })}
-
-${rect({ x: statusX, y: statusY, w: statusW, h: statusH, fill: t.surfaceHi, stroke: t.border })}
-${circle({ cx: statusX + 19, cy: statusCy, r: 4.5, fill: t.accent3, cls: 'pulse' })}
-${text(IDENTITY.status, { x: statusX + 32, y: statusCy + 4.2, size: statusSize, weight: 700, fill: t.accent3, mono: true, tracking: statusTrack })}
-
-${text(IDENTITY.eyebrow, { x: PAD, y: 68, size: 12.5, weight: 600, fill: t.faint, mono: true, tracking: 3 })}
-${text(IDENTITY.name, { x: PAD, y: 152, size: 68, weight: 700, fill: t.text, tracking: -2 })}
-${rect({ x: PAD, y: 174, w: 96, h: 5, fill: 'url(#rule)' })}
-${text(IDENTITY.role, { x: PAD, y: 222, size: 21, weight: 550, fill: t.text })}
-${lines(IDENTITY.lede, { x: PAD, y: 264, leading: 27, size: 17, fill: t.muted })}
-${chipsSvg}
-`;
-
-  return svg({
-    w: W, h: H, defs, css, body,
-    title: `${IDENTITY.name} — ${IDENTITY.role}`,
-    desc: `${IDENTITY.eyebrow}. ${IDENTITY.lede.join(' ')} Based in Thimphu, Bhutan. Open to collaborate.`,
+/**
+ * Deterministic craggy ridge: midpoint displacement over a trend that rises
+ * to the right, so the line reads as a Himalayan skyline and a chart at once.
+ * It stays low under the text block and inside the 300-440 chart band.
+ */
+function ridge() {
+  let seed = 7;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647) * 2 - 1;
+  const N = 128;
+  const ys = new Array(N + 1).fill(0);
+  let amp = 64;
+  for (let step = N; step > 1; step /= 2, amp *= 0.6) {
+    for (let i = step / 2; i < N; i += step) ys[i] = (ys[i - step / 2] + ys[i + step / 2]) / 2 + rnd() * amp;
+  }
+  const x1 = W - 26;
+  return ys.map((n, i) => {
+    const t = i / N;
+    const k = Math.min(1, Math.max(0, (t - 0.4) / 0.6));
+    const trend = 404 - 84 * (k * k * (3 - 2 * k));
+    return [x1 * t, Math.min(428, trend + n * (0.55 + t * 0.45))];
   });
 }
 
-/* ---------------------------------------------------------------- domains -- */
+function hero(t) {
+  const T = new Type();
+  const H = 486;
+  const pts = ridge();
+  const [ex, ey] = pts[pts.length - 1];
+  const lineD = 'M' + pts.map(([x, y]) => `${round(x)} ${round(y)}`).join('L');
+  let len = 0;
+  for (let i = 1; i < pts.length; i++) len += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+  len = Math.ceil(len);
+  /* Status sits clear of the highest ridge point beneath it. */
+  const labelY = Math.min(...pts.filter(([x]) => x > ex - 210).map(([, y]) => y)) - 14;
 
-function domains(t) {
-  const H = 280;
-  const gap = 16;
-  const cw = (W - gap * 2) / 3;
-  const ch = H - 2;
-  const inner = cw - 48;
+  /* The name is fitted to run the full column width, edge to edge. */
+  const fit = (W - 4) / T.measure(IDENTITY.name, { font: F.d8, size: 1 });
+  const nameSize = round(fit * 1.04);
 
-  const defs = DOMAINS.map((d, i) => auroraDef(`glow${i}`, t[d.accent], 0.34)).join('') +
-    DOMAINS.map((_, i) => {
-      const x = i * (cw + gap);
-      return `<clipPath id="c${i}"><rect x="${round(x + 0.75)}" y="1" width="${round(cw - 1.5)}" height="${ch}"/></clipPath>`;
-    }).join('');
+  /* The line is always fully drawn; motion is a highlight travelling along it,
+     so a renderer that freezes on frame 0 still shows the whole composition. */
+  const css = `
+    .scan{stroke-dasharray:90 ${len};animation:scan 7s cubic-bezier(.45,0,.25,1) infinite}
+    @keyframes scan{from{stroke-dashoffset:90}to{stroke-dashoffset:-${len}}}
+    .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
+    @keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(4.2);opacity:0}}
+  `;
+  const defs = `<linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${t.saffron}" stop-opacity="${t.areaTop}"/>
+      <stop offset="100%" stop-color="${t.saffron}" stop-opacity="0"/>
+    </linearGradient>`;
 
-  const cards = DOMAINS.map((d, i) => {
-    const x = i * (cw + gap);
-    const color = t[d.accent];
-    const body = wrap(d.body, inner, 16).slice(0, 4);
-    return `
-<g>
-  ${rect({ x: x + 0.75, y: 1, w: cw - 1.5, h: ch, fill: t.surface })}
-  <g clip-path="url(#c${i})">
-    <ellipse cx="${round(x + 34)}" cy="8" rx="170" ry="115" fill="url(#glow${i})" opacity="${round(t.auroraOpacity * 0.5)}"/>
-  </g>
-  ${rect({ x: x + 0.75, y: 1, w: cw - 1.5, h: ch, stroke: t.border, strokeWidth: 1.25 })}
-  ${rect({ x: x + 24, y: 26, w: 26, h: 4, fill: color })}
-  ${text(d.n, { x: x + 24, y: 58, size: 12, weight: 700, fill: color, mono: true, tracking: 2.4 })}
-  ${icon(d.icon, x + cw - 46, 26, color, 1)}
-  ${text(d.title, { x: x + 24, y: 104, size: 20.5, weight: 650, fill: t.text, tracking: -0.4 })}
-  ${lines(body, { x: x + 24, y: 140, leading: 24, size: 16, fill: t.muted })}
-  ${path(`M${round(x + 24)} 234 H${round(x + cw - 24)}`, { stroke: t.border, strokeWidth: 1 })}
-  ${text(d.meta, { x: x + 24, y: 258, size: 11, weight: 600, fill: t.faint, mono: true, tracking: 2 })}
-</g>`;
+  const months = FY.map((m, i) => {
+    const x = (i + 0.5) * (W / 12);
+    return vr(round(i * (W / 12)) + 0.5, 432, 440, t.ruleHi) +
+      T.run(m, { font: F.m4, size: 11, x, y: 466, fill: t.faint, tracking: 1.2, anchor: 'middle' });
   }).join('');
 
-  return svg({
-    w: W, h: H, defs, body: cards,
-    title: 'Three domains: public finance, software engineering, open protocols',
-    desc: DOMAINS.map((d) => `${d.title}: ${d.body}`).join(' '),
+  const body = `
+${T.run(IDENTITY.place, { font: F.m5, size: 12, x: 0, y: 22, fill: t.text, tracking: 2 })}
+${T.run(IDENTITY.coords, { font: F.m4, size: 12, x: W, y: 22, fill: t.faint, tracking: 1, anchor: 'end' })}
+${hr(0, W, 40, t.rule)}
+${T.run(IDENTITY.name, { font: F.d8, size: nameSize, x: -2, y: 168, fill: t.text, tracking: -nameSize * 0.04 })}
+${T.run(IDENTITY.role, { font: F.d7, size: 22, x: 0, y: 216, fill: t.text, tracking: -0.2 })}
+${T.lines(IDENTITY.lede, { font: F.d4, size: 17, x: 0, y: 250, leading: 27, fill: t.muted })}
+${months}
+<path d="${lineD}V440H0Z" fill="url(#area)"/>
+${path(lineD, { stroke: t.saffron, strokeWidth: 2, join: 'miter' })}
+${path(lineD, { stroke: t.text, strokeWidth: 2.5, cls: 'scan', join: 'miter', opacity: 0.85 })}
+${hr(0, W, 440, t.ruleHi)}
+${circle({ cx: ex, cy: ey, r: 5, fill: t.vermilion, cls: 'ping' })}
+${circle({ cx: ex, cy: ey, r: 5, fill: t.vermilion })}
+${T.run(IDENTITY.status, { font: F.m5, size: 11.5, x: ex - 18, y: labelY, fill: t.vermilion, tracking: 1.6, anchor: 'end' })}
+`;
+
+  return doc({
+    T, h: H, css, defs, body,
+    title: `${IDENTITY.name}, ${IDENTITY.role}`,
+    desc: `${IDENTITY.name}. ${IDENTITY.role}. ${IDENTITY.lede.join(' ')} Thimphu, Bhutan. Open to collaborate.`,
+  });
+}
+
+/* ---------------------------------------------------------------- buttons -- */
+
+function button(t, link) {
+  const T = new Type();
+  const H = 44, size = 12.5, track = 1.6;
+  // 20 gutter + label + 14 gap + 11 arrow + 18 tail
+  const w = Math.ceil(T.measure(link.label, { font: F.m5, size, tracking: track }) + 63);
+  const fg = link.primary ? t.onAccent : t.text;
+  const body = `
+${rect({ x: 0.5, y: 0.5, w: w - 1, h: H - 1, fill: link.primary ? t.saffron : 'none', stroke: link.primary ? t.saffron : t.ruleHi })}
+${T.run(link.label, { font: F.m5, size, x: 20, y: 27, fill: fg, tracking: track })}
+${arrow(w - 29, 27.5, link.primary ? t.onAccent : t.saffron, 10, 1.6)}`;
+  return doc({ T, w, h: H, body, title: link.label, desc: `Link: ${link.label.toLowerCase()}` });
+}
+
+/* ------------------------------------------------------------------- work -- */
+
+const COL = { year: 0, name: 112, tags: 660, end: W };
+
+function workHead(t) {
+  const T = new Type();
+  const H = 34;
+  const lab = (s, x, anchor) => T.run(s, { font: F.m5, size: 11, x, y: 16, fill: t.faint, tracking: 1.8, anchor });
+  const body = `${lab('YEAR', COL.year)}${lab('PROJECT', COL.name)}${lab('DETAIL', COL.tags)}${lab('LIVE', COL.end, 'end')}${hr(0, W, H - 1, t.ruleHi)}`;
+  return doc({ T, h: H, body, title: 'Selected work', desc: 'Columns: year, project, detail, live link.' });
+}
+
+function workRow(t, p, last) {
+  const T = new Type();
+  const H = 132;
+  const desc = T.wrap(p.body, COL.tags - COL.name - 48, { font: F.d4, size: 16 });
+  const body = `
+${T.run(p.year, { font: F.m4, size: 13, x: COL.year, y: 45, fill: t.faint, tracking: 1 })}
+${T.run(p.name, { font: F.d7, size: 25, x: COL.name, y: 46, fill: t.text, tracking: -0.5 })}
+${T.lines(desc, { font: F.d4, size: 16, x: COL.name, y: 78, leading: 24, fill: t.muted })}
+${p.tags.map((tag, i) => T.run(tag, { font: F.m4, size: 11, x: COL.tags, y: 44 + i * 20, fill: t.faint, tracking: 1.4 })).join('')}
+${arrow(W - 13, 46, t.saffron, 12, 1.8)}
+${hr(0, W, H - 0.5, last ? t.ruleHi : t.rule)}`;
+  return doc({ T, h: H, body, title: `${p.name} (${p.year})`, desc: `${p.body} ${p.tags.join(', ').toLowerCase()}.` });
+}
+
+/* --------------------------------------------------------------- practice -- */
+
+function practice(t) {
+  const T = new Type();
+  const H = 214, gap = 36;
+  const cw = (W - gap * 2) / 3;
+  const body = PRACTICE.map((p, i) => {
+    const x = i * (cw + gap);
+    const lines = T.wrap(p.body, cw - 8, { font: F.d4, size: 16 });
+    return `
+${hr(round(x), round(x + cw), 1, t.ruleHi, 2)}${hr(round(x), round(x + 32), 1, t.saffron, 2)}
+${T.run(p.when, { font: F.m5, size: 11.5, x, y: 34, fill: t.faint, tracking: 1.8 })}
+${T.run(p.title, { font: F.d7, size: 23, x, y: 80, fill: t.text, tracking: -0.4 })}
+${T.lines(lines, { font: F.d4, size: 16, x, y: 114, leading: 24, fill: t.muted })}`;
+  }).join('');
+  return doc({
+    T, h: H, body,
+    title: 'Practice: public finance, software, open protocols',
+    desc: PRACTICE.map((p) => `${p.when.toLowerCase()}, ${p.title}: ${p.body}`).join(' '),
   });
 }
 
 /* ------------------------------------------------------------------ stack -- */
 
 function stack(t) {
-  const railX = 36, chipsX = 56, maxX = W - 36;
-  const gap = 9, chipH = 36, chipGapY = 10, rowGap = 30, labelH = 28;
-  const rails = [t.accent, t.accent2, t.accent3];
-  const avail = maxX - chipsX;
-
-  const make = (label, brand, x, y) => chip(label, {
-    x, y, t, size: 15, h: chipH,
-    dot: brand ?? t.text, fill: t.surfaceAlt, stroke: t.border, color: t.text,
-  });
-
-  /**
-   * Split a row into the fewest EQUAL-length lines that fit. An even 4 + 4 reads
-   * as a deliberate grid; a greedy fill would leave one orphan tag on line two.
-   */
-  const split = (items) => {
-    const widths = items.map(([l, b]) => make(l, b, 0, 0).w);
-    const fits = (chunkSize) => {
-      for (let i = 0; i < items.length; i += chunkSize) {
-        const slice = widths.slice(i, i + chunkSize);
-        const total = slice.reduce((a, b) => a + b, 0) + gap * (slice.length - 1);
-        if (total > avail) return false;
-      }
-      return true;
-    };
-    for (let n = 1; n <= items.length; n++) {
-      const chunkSize = Math.ceil(items.length / n);
-      if (fits(chunkSize)) {
-        const rows = [];
-        for (let i = 0; i < items.length; i += chunkSize) rows.push(items.slice(i, i + chunkSize));
-        return rows;
-      }
-    }
-    return [items];
-  };
-
+  const T = new Type();
+  const x0 = 200, size = 18, sep = '   /   ';
+  const sepW = T.measure(sep, { font: F.d4, size });
   const parts = [];
-  let y = 40;
-  STACK.forEach((row, i) => {
-    const grid = split(row.items);
-    grid.forEach((line, li) => {
-      let x = chipsX;
-      const lineY = y + labelH + li * (chipH + chipGapY);
-      for (const [label, brand] of line) {
-        const c = make(label, brand, x, lineY);
-        parts.push(c.svg);
-        x += c.w + gap;
+  let y = 0;
+  STACK.forEach(([label, items], ri) => {
+    let lx = x0, ly = y + 42;
+    items.forEach((item, i) => {
+      const iw = T.measure(item, { font: F.d5, size });
+      if (lx + iw > W && lx > x0) { lx = x0; ly += 32; }
+      parts.push(T.run(item, { font: F.d5, size, x: lx, y: ly, fill: t.text }));
+      lx += iw;
+      if (i < items.length - 1) {
+        if (lx + sepW > W - 60) {
+          lx = x0;
+          ly += 32;
+        } else {
+          parts.push(T.run('/', { font: F.d4, size, x: lx + sepW / 2, y: ly, fill: t.ruleHi, anchor: 'middle' }));
+          lx += sepW;
+        }
       }
     });
-    const blockH = labelH + grid.length * chipH + (grid.length - 1) * chipGapY;
-    parts.push(
-      rect({ x: railX, y, w: 3, h: blockH, fill: rails[i] }),
-      text(row.label, { x: chipsX, y: y + 13, size: 12.5, weight: 700, fill: t.faint, mono: true, tracking: 2.4 }),
-    );
-    y += blockH + rowGap;
-    if (i < STACK.length - 1) {
-      parts.push(path(`M${railX} ${round(y - rowGap / 2)} H${maxX}`, { stroke: t.border, strokeWidth: 1, opacity: 0.7 }));
-    }
+    parts.push(T.run(label, { font: F.m5, size: 11.5, x: 0, y: y + 40, fill: t.faint, tracking: 1.8 }));
+    y = ly + 24;
+    parts.push(hr(0, W, round(y) - 0.5, ri === STACK.length - 1 ? t.ruleHi : t.rule));
   });
-
-  const H = y - rowGap + 36;
-  const body = `
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, fill: t.surface })}
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, stroke: t.border, strokeWidth: 1.25 })}
-${parts.join('')}`;
-
-  return svg({
-    w: W, h: H, body,
-    title: 'Engineering stack',
-    desc: STACK.map((r) => `${r.label}: ${r.items.map(([l]) => l).join(', ')}`).join('. '),
+  return doc({
+    T, h: Math.ceil(y), body: `${hr(0, W, 0.5, t.ruleHi)}${parts.join('')}`,
+    title: 'Stack',
+    desc: STACK.map(([l, i]) => `${l}: ${i.join(', ')}`).join('. '),
   });
 }
 
 /* ------------------------------------------------------------------- loop -- */
 
 function loop(t) {
-  const H = 280;
-  const y0 = 90, half = 32;
-  const xs = [157.5, 352.5, 547.5, 742.5];
-  const COL = 178; // stage text column: narrow enough to clear the return bus
-  const accents = [t.accent, t.accent2, t.accent3, t.accent4];
-
-  const css = `
-    .flow{stroke-dasharray:7 9;animation:flow 1.5s linear infinite}
-    @keyframes flow{to{stroke-dashoffset:-16}}
-    .flowback{stroke-dasharray:6 10;animation:flowback 2.6s linear infinite}
-    @keyframes flowback{to{stroke-dashoffset:-16}}
-  `;
-
-  const stages = LOOP.map((s, i) => {
-    const x = xs[i];
-    const sub = wrap(s.body, COL, 14.5);
+  const T = new Type();
+  const H = 150, step = W / 4;
+  const css = `.flow{stroke-dasharray:4 6;animation:flow 1.6s linear infinite}@keyframes flow{to{stroke-dashoffset:-20}}`;
+  const stages = LOOP.map(([n, title, body], i) => {
+    const x = i * step;
+    const lines = T.wrap(body, step - 36, { font: F.d4, size: 15 });
     return `
-${rect({ x: x - half, y: y0 - half, w: half * 2, h: half * 2, fill: t.surfaceAlt, stroke: t.borderHi, strokeWidth: 1.25 })}
-${rect({ x: x - half - 9, y: y0 - half - 9, w: half * 2 + 18, h: half * 2 + 18, stroke: accents[i], strokeWidth: 1.25, opacity: 0.32 })}
-${text(s.n, { x, y: y0 + 6, size: 17, weight: 700, fill: accents[i], mono: true, anchor: 'middle', tracking: 1 })}
-${text(s.title, { x, y: 172, size: 19, weight: 650, fill: t.text, anchor: 'middle', tracking: -0.3 })}
-${lines(sub, { x, y: 198, leading: 20, size: 14.5, fill: t.faint, anchor: 'middle' })}`;
+${rect({ x, y: 14, w: 10, h: 10, fill: i === LOOP.length - 1 ? t.vermilion : t.saffron })}
+${T.run(n, { font: F.m5, size: 12, x: x + 20, y: 23.5, fill: t.faint, tracking: 1.4 })}
+${T.run(title, { font: F.d7, size: 21, x, y: 72, fill: t.text, tracking: -0.3 })}
+${T.lines(lines, { font: F.d4, size: 15, x, y: 102, leading: 22, fill: t.muted })}`;
   }).join('');
-
-  const connectors = xs.slice(0, -1).map((x, i) => {
-    const from = x + half + 14, to = xs[i + 1] - half - 20;
-    return path(`M${from} ${y0} H${to}`, { stroke: t.borderHi, strokeWidth: 1.5, cls: 'flow', cap: 'butt' }) +
-      path(`M${to} ${y0 - 5} L${to + 7} ${y0} L${to} ${y0 + 5}`, { stroke: t.borderHi, strokeWidth: 1.5, cap: 'butt' });
-  }).join('');
-
-  /* Return path is routed around the outside of the stage columns, so it can
-     never cross a description no matter how the copy wraps. */
-  const [BUS_L, BUS_R, BUS_Y] = [36, W - 36, 246];
-  const busD = `M${xs[3] + half} ${y0} H${BUS_R} V${BUS_Y} H${BUS_L} V${y0} H${xs[0] - half - 9}`;
-  const labelW = Math.ceil(measure('REFINE', 11, { mono: true, tracking: 2.4 }) + 28);
-  const returnArc = `
-${path(busD, { stroke: t.borderHi, strokeWidth: 1.5, cls: 'flowback', join: 'miter', cap: 'butt' })}
-${path(`M${xs[0] - half - 16} ${y0 - 5} L${xs[0] - half - 9} ${y0} L${xs[0] - half - 16} ${y0 + 5}`, { stroke: t.borderHi, strokeWidth: 1.5, cap: 'butt' })}
-${rect({ x: W / 2 - labelW / 2, y: BUS_Y - 14, w: labelW, h: 28, fill: t.surface, stroke: t.borderHi })}
-${text('REFINE', { x: W / 2, y: BUS_Y + 4, size: 11, weight: 700, fill: t.muted, mono: true, tracking: 2.4, anchor: 'middle' })}`;
-
-  const body = `
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, fill: t.surface })}
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, stroke: t.border, strokeWidth: 1.25 })}
-${connectors}
-${returnArc}
-${stages}`;
-
-  return svg({
-    w: W, h: H, css, body,
-    title: 'How I work: understand, model, build, explain, refine',
-    desc: LOOP.map((s) => `${s.n} ${s.title}: ${s.body}`).join(' ') + ' Then refine and repeat.',
+  const links = LOOP.slice(1).map((_, i) =>
+    path(`M${round(i * step + 54)} 19H${round((i + 1) * step - 14)}`, { stroke: t.ruleHi, strokeWidth: 1.25, cls: 'flow', cap: 'butt' }),
+  ).join('');
+  return doc({
+    T, h: H, css, body: links + stages,
+    title: 'How I work: understand, model, build, explain',
+    desc: LOOP.map(([n, a, b]) => `${n} ${a}: ${b}`).join(' '),
   });
 }
 
 /* ----------------------------------------------------------------- footer -- */
 
 function footer(t) {
-  const H = 196;
-  const defs = auroraDef('fglow', t.accent2, 0.55) +
-    linearDef('fbg', t.surface, t.surfaceAlt, { x2: '100%', y2: '100%' }) +
-    `<clipPath id="fcard"><rect x="0.75" y="1" width="${W - 1.5}" height="${H - 2}"/></clipPath>` +
-    gridDef('fgrid', t, 28);
-
-  const dots = [t.accent, t.accent2, t.accent3, t.accent4]
-    .map((c, i) => rect({ x: W / 2 - 31 + i * 20, y: 160, w: 8, h: 8, fill: c, opacity: 0.85 }))
-    .join('');
-
+  const T = new Type();
+  const H = 214, hs = 54, htrack = -1.6;
+  const hw = round(T.measure(FOOTER.headline, { font: F.d8, size: hs, tracking: htrack }));
   const body = `
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, fill: 'url(#fbg)' })}
-<g clip-path="url(#fcard)">
-  ${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, fill: 'url(#fgrid)' })}
-  <ellipse cx="${W / 2}" cy="220" rx="420" ry="180" fill="url(#fglow)" opacity="${t.auroraOpacity}"/>
-</g>
-${rect({ x: 0.75, y: 1, w: W - 1.5, h: H - 2, stroke: t.border, strokeWidth: 1.25 })}
-${text(FOOTER.eyebrow, { x: W / 2, y: 56, size: 12, weight: 700, fill: t.faint, mono: true, tracking: 3.2, anchor: 'middle' })}
-${text(FOOTER.headline, { x: W / 2, y: 108, size: 36, weight: 700, fill: t.text, tracking: -1, anchor: 'middle' })}
-${text(FOOTER.sub, { x: W / 2, y: 140, size: 16, weight: 450, fill: t.muted, anchor: 'middle' })}
-${dots}`;
-
-  return svg({ w: W, h: H, defs, body, title: FOOTER.headline, desc: `${FOOTER.headline} ${FOOTER.sub}` });
-}
-
-/* ---------------------------------------------------------------- buttons -- */
-
-function linkIcon(kind, x, y, color) {
-  const g = (inner) => `<g transform="translate(${x} ${y})">${inner}</g>`;
-  if (kind === 'grid') {
-    const cell = (cx, cy, o) => rect({ x: cx, y: cy, w: 7.5, h: 7.5, fill: color, opacity: o });
-    return g(cell(0, 0, 1) + cell(10.5, 0, 0.6) + cell(0, 10.5, 0.6) + cell(10.5, 10.5, 1));
-  }
-  if (kind === 'arrow') {
-    return g(path('M3 15 L15 3 M6 3 H15 V12', { stroke: color, strokeWidth: 2.2, cap: 'butt', join: 'miter' }));
-  }
-  const pts = Array.from({ length: 10 }, (_, i) => {
-    const r = i % 2 === 0 ? 9 : 3.9;
-    const a = (Math.PI / 5) * i - Math.PI / 2;
-    return `${round(9 + Math.cos(a) * r)} ${round(9 + Math.sin(a) * r)}`;
-  });
-  return g(path(`M${pts.join('L')}Z`, { fill: color }));
-}
-
-function button(t, link) {
-  const H = 46, size = 16;
-  // 22 gutter + 18 icon + 12 gap + label + 14 gap + 7 chevron + 20 tail
-  const labelW = measure(link.label, size, { bold: true });
-  const w = Math.ceil(labelW + 93);
-  const color = t[link.accent];
-  const body = `
-${rect({ x: 0.75, y: 0.75, w: w - 1.5, h: H - 1.5, fill: t.surfaceAlt })}
-${rect({ x: 0.75, y: 0.75, w: w - 1.5, h: H - 1.5, stroke: t.border, strokeWidth: 1.25 })}
-${linkIcon(link.icon, 22, 14, color)}
-${text(link.label, { x: 52, y: 29, size, weight: 600, fill: t.text })}
-${path(`M${w - 27} 18 L${w - 20} 23 L${w - 27} 28`, { stroke: t.faint, strokeWidth: 1.8, cap: 'butt', join: 'miter' })}`;
-  return svg({ w, h: H, body, title: link.label, desc: `Link to ${link.label}` });
+${hr(0, W, 0.5, t.ruleHi)}
+${T.run(FOOTER.eyebrow, { font: F.m5, size: 11.5, x: 0, y: 40, fill: t.faint, tracking: 1.8 })}
+${T.run(FOOTER.local, { font: F.m4, size: 11.5, x: W, y: 40, fill: t.faint, tracking: 1.4, anchor: 'end' })}
+${T.run(FOOTER.headline, { font: F.d8, size: hs, x: -1, y: 114, fill: t.text, tracking: htrack })}
+${hr(0, hw, 132, t.saffron, 2)}${hr(0, hw, 138, t.saffron, 2)}
+${T.run(FOOTER.sub, { font: F.d4, size: 17, x: 0, y: 182, fill: t.muted })}`;
+  return doc({ T, h: H, body, title: FOOTER.headline, desc: `${FOOTER.headline} ${FOOTER.sub}` });
 }
 
 /* ------------------------------------------------------------------- main -- */
 
-const BUILDERS = { hero, domains, stack, loop, footer };
+const BUILDERS = { hero, 'work-head': workHead, practice, stack, loop, footer };
 
 await mkdir(OUT, { recursive: true });
 const written = [];
 const emit = async (name, contents) => {
   await writeFile(join(OUT, `${name}.svg`), contents, 'utf8');
-  written.push(`assets/${name}.svg`.padEnd(30) + `${String(Buffer.byteLength(contents)).padStart(6)} B`);
+  written.push(`assets/${name}.svg`.padEnd(34) + `${String(Buffer.byteLength(contents)).padStart(6)} B`);
 };
 
 for (const theme of Object.values(THEMES)) {
   for (const [name, build] of Object.entries(BUILDERS)) await emit(`${name}-${theme.name}`, build(theme));
+  for (const [i, p] of WORK.entries()) await emit(`work-${p.id}-${theme.name}`, workRow(theme, p, i === WORK.length - 1));
   for (const link of LINKS) await emit(`btn-${link.id}-${theme.name}`, button(theme, link));
 }
 

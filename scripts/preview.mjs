@@ -18,7 +18,7 @@ const run = promisify(execFile);
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, '.preview');
 
-const DEFAULT_ASSETS = ['hero', 'domains', 'stack', 'loop', 'footer'];
+const DEFAULT_ASSETS = ['hero', 'work-head', 'work-fdh', 'work-recorder', 'practice', 'stack', 'loop', 'footer'];
 const CANDIDATES = [
   process.env.CHROME,
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
